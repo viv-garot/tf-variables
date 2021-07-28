@@ -1,8 +1,7 @@
-# SkillMap-template
-Template for skillmap related tasks
+# sample repo - null provider
 
 ## Description
-What the goal of this repo ?
+This is a simple repo for learning Terraform null_resource
 
 ## Pre-requirements
 
