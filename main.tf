@@ -1,5 +1,7 @@
-resource "random_pet" "pet" {}
+output "Alvaro" {
+  value = "El magnifico"
+}
 
-output "pet" {
-  value = random_pet.pet
+output "Alvarito" {
+  value = "El papito"
 }
