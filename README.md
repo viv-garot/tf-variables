@@ -1,7 +1,7 @@
-# sample repo - null provider
+# sample repo - use count - null provider - use count.index
 
 ## Description
-This is a simple repo for learning Terraform null_resource
+This is a simple repo for learning Terraform null_resource along with the count meta-argument
 
 ## Pre-requirements
 
