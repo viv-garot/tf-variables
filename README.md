@@ -1,4 +1,4 @@
-# sample repo - random_pet
+# sample repo - output
 
 ## Description
 This is a simple repo for learning Terraform random provider
@@ -18,13 +18,13 @@ This is a simple repo for learning Terraform random provider
 ### Clone the repo
 
 ```
-git clone https://github.com/viv-garot/tf-random-pet
+git clone https://github.com/viv-garot/tf-outputs
 ```
 
 ### Change directory
 
 ```
-cd tf-random-pet
+cd tf-outputs
 ```
 
 ### Run
@@ -38,17 +38,11 @@ $ terraform init
 _sample_
 
 ```
+terraform init
+
 Initializing the backend...
 
 Initializing provider plugins...
-- Finding latest version of hashicorp/random...
-- Installing hashicorp/random v3.1.0...
-- Installed hashicorp/random v3.1.0 (signed by HashiCorp)
-
-Terraform has created a lock file .terraform.lock.hcl to record the provider
-selections it made above. Include this file in your version control repository
-so that Terraform can guarantee to make the same selections by default when
-you run "terraform init" in the future.
 
 Terraform has been successfully initialized!
 
@@ -72,29 +66,11 @@ _sample_
 ```
 terraform apply
 
-Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following
-symbols:
-  + create
-
-Terraform will perform the following actions:
-
-  # random_pet.pet will be created
-  + resource "random_pet" "pet" {
-      + id        = (known after apply)
-      + length    = 2
-      + separator = "-"
-    }
-
-Plan: 1 to add, 0 to change, 0 to destroy.
-
 Changes to Outputs:
-  + pet = {
-      + id        = (known after apply)
-      + keepers   = null
-      + length    = 2
-      + prefix    = null
-      + separator = "-"
-    }
+  + Alvarito = "El papito"
+  + Alvaro   = "El magnifico"
+
+You can apply this plan to save these new output values to the Terraform state, without changing any real infrastructure.
 
 Do you want to perform these actions?
   Terraform will perform the actions described above.
@@ -102,18 +78,11 @@ Do you want to perform these actions?
 
   Enter a value: yes
 
-random_pet.pet: Creating...
-random_pet.pet: Creation complete after 0s [id=social-rooster]
 
-Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
+Apply complete! Resources: 0 added, 0 changed, 0 destroyed.
 
 Outputs:
 
-pet = {
-  "id" = "social-rooster"
-  "keepers" = tomap(null) /* of string */
-  "length" = 2
-  "prefix" = tostring(null)
-  "separator" = "-"
-}
+Alvarito = "El papito"
+Alvaro = "El magnifico"
 ```
