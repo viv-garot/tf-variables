@@ -6,32 +6,28 @@ What the goal of this repo ?
 
 ## Pre-requirements
 
-* [Packer](https://www.packer.io/downloads)
-* [Vagrant](https://www.vagrantup.com/downloads)
-* [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
-* [x](http://www.link.to.x)
+* [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) 
+* [Terraform cli](https://learn.hashicorp.com/tutorials/terraform/install-cli)
 
 ## How to use this repo
 
 - Clone
-- Build
-- c
-- d
-- e
-- x 
+- Run
 
 ---
 
 ### Clone the repo
 
 ```
-git clone xxxxxxxx
+git clone https://github.com/viv-garot/tf-null
 ```
 
 ### Change directory
 
 ```
-cd xxxxxxx
+cd tf-null
 ```
 
-### [.......]
+### Run
+
+
