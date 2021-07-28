@@ -1,4 +1,4 @@
-# sample repo - random
+# sample repo - random_pet
 
 ## Description
 This is a simple repo for learning Terraform random provider
@@ -18,13 +18,13 @@ This is a simple repo for learning Terraform random provider
 ### Clone the repo
 
 ```
-git clone https://github.com/viv-garot/tf-random
+git clone https://github.com/viv-garot/tf-random-pet
 ```
 
 ### Change directory
 
 ```
-cd tf-random
+cd tf-random-pet
 ```
 
 ### Run
@@ -78,28 +78,22 @@ symbols:
 
 Terraform will perform the following actions:
 
-  # random_id.id will be created
-  + resource "random_id" "id" {
-      + b64_std     = (known after apply)
-      + b64_url     = (known after apply)
-      + byte_length = 8
-      + dec         = (known after apply)
-      + hex         = (known after apply)
-      + id          = (known after apply)
+  # random_pet.pet will be created
+  + resource "random_pet" "pet" {
+      + id        = (known after apply)
+      + length    = 2
+      + separator = "-"
     }
 
 Plan: 1 to add, 0 to change, 0 to destroy.
 
 Changes to Outputs:
-  + id = {
-      + b64_std     = (known after apply)
-      + b64_url     = (known after apply)
-      + byte_length = 8
-      + dec         = (known after apply)
-      + hex         = (known after apply)
-      + id          = (known after apply)
-      + keepers     = null
-      + prefix      = null
+  + pet = {
+      + id        = (known after apply)
+      + keepers   = null
+      + length    = 2
+      + prefix    = null
+      + separator = "-"
     }
 
 Do you want to perform these actions?
@@ -108,21 +102,18 @@ Do you want to perform these actions?
 
   Enter a value: yes
 
-random_id.id: Creating...
-random_id.id: Creation complete after 0s [id=zP9YtPQtTd0]
+random_pet.pet: Creating...
+random_pet.pet: Creation complete after 0s [id=social-rooster]
 
 Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
 
 Outputs:
 
-id = {
-  "b64_std" = "zP9YtPQtTd0="
-  "b64_url" = "zP9YtPQtTd0"
-  "byte_length" = 8
-  "dec" = "14771622837012483549"
-  "hex" = "ccff58b4f42d4ddd"
-  "id" = "zP9YtPQtTd0"
+pet = {
+  "id" = "social-rooster"
   "keepers" = tomap(null) /* of string */
+  "length" = 2
   "prefix" = tostring(null)
+  "separator" = "-"
 }
 ```
