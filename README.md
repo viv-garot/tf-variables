@@ -1,7 +1,7 @@
 # sample repo - output
 
 ## Description
-This is a simple repo for learning Terraform random provider
+This is a simple repo for learning Terraform outputs
 
 ## Pre-requirements
 
