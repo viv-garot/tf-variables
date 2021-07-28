@@ -1,7 +1,18 @@
+variable "Alvaro" {
+  type    = string
+  default = "El magnifico"
+}
+
+variable "alvarito" {
+  type    = string
+  default = "El papito"
+}
+
+
 output "Alvaro" {
-  value = "El magnifico"
+  value = var.Alvaro
 }
 
 output "Alvarito" {
-  value = "El papito"
+  value = var.alvarito
 }
