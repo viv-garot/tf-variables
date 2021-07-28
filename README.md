@@ -18,13 +18,13 @@ This is a simple repo for learning Terraform null_resource
 ### Clone the repo
 
 ```
-git clone https://github.com/viv-garot/tf-null
+git clone https://github.com/viv-garot/tf-null-count
 ```
 
 ### Change directory
 
 ```
-cd tf-null
+cd tf-null-count
 ```
 
 ### Run
@@ -80,12 +80,32 @@ symbols:
 
 Terraform will perform the following actions:
 
-  # null_resource.null will be created
+  # null_resource.null[0] will be created
   + resource "null_resource" "null" {
       + id = (known after apply)
     }
 
-Plan: 1 to add, 0 to change, 0 to destroy.
+  # null_resource.null[1] will be created
+  + resource "null_resource" "null" {
+      + id = (known after apply)
+    }
+
+  # null_resource.null[2] will be created
+  + resource "null_resource" "null" {
+      + id = (known after apply)
+    }
+
+  # null_resource.null[3] will be created
+  + resource "null_resource" "null" {
+      + id = (known after apply)
+    }
+
+  # null_resource.null[4] will be created
+  + resource "null_resource" "null" {
+      + id = (known after apply)
+    }
+
+Plan: 5 to add, 0 to change, 0 to destroy.
 
 Do you want to perform these actions?
   Terraform will perform the actions described above.
@@ -93,8 +113,29 @@ Do you want to perform these actions?
 
   Enter a value: yes
 
-null_resource.null: Creating...
-null_resource.null: Creation complete after 0s [id=437848887507395149]
-
-Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
+null_resource.null[0]: Creating...
+null_resource.null[4]: Creating...
+null_resource.null[2]: Creating...
+null_resource.null[3]: Creating...
+null_resource.null[1]: Creating...
+null_resource.null[0]: Provisioning with 'local-exec'...
+null_resource.null[2]: Provisioning with 'local-exec'...
+null_resource.null[3]: Provisioning with 'local-exec'...
+null_resource.null[0] (local-exec): Executing: ["/bin/sh" "-c" "echo This is null_resource number: 0"]
+null_resource.null[2] (local-exec): Executing: ["/bin/sh" "-c" "echo This is null_resource number: 2"]
+null_resource.null[3] (local-exec): Executing: ["/bin/sh" "-c" "echo This is null_resource number: 3"]
+null_resource.null[1]: Provisioning with 'local-exec'...
+null_resource.null[1] (local-exec): Executing: ["/bin/sh" "-c" "echo This is null_resource number: 1"]
+null_resource.null[4]: Provisioning with 'local-exec'...
+null_resource.null[4] (local-exec): Executing: ["/bin/sh" "-c" "echo This is null_resource number: 4"]
+null_resource.null[0] (local-exec): This is null_resource number: 0
+null_resource.null[0]: Creation complete after 0s [id=2971497641982540838]
+null_resource.null[3] (local-exec): This is null_resource number: 3
+null_resource.null[1] (local-exec): This is null_resource number: 1
+null_resource.null[4] (local-exec): This is null_resource number: 4
+null_resource.null[2] (local-exec): This is null_resource number: 2
+null_resource.null[3]: Creation complete after 1s [id=7848515897122377505]
+null_resource.null[1]: Creation complete after 1s [id=4194411336333174841]
+null_resource.null[4]: Creation complete after 1s [id=5482766409619898131]
+null_resource.null[2]: Creation complete after 1s [id=171959502576212568]
 ```
