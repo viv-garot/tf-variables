@@ -1,7 +1,7 @@
-# sample repo - use count - null provider - use count.index
+# sample repo - random
 
 ## Description
-This is a simple repo for learning Terraform null_resource along with the count meta-argument
+This is a simple repo for learning Terraform random provider
 
 ## Pre-requirements
 
@@ -18,13 +18,13 @@ This is a simple repo for learning Terraform null_resource along with the count 
 ### Clone the repo
 
 ```
-git clone https://github.com/viv-garot/tf-null-count
+git clone https://github.com/viv-garot/tf-random
 ```
 
 ### Change directory
 
 ```
-cd tf-null-count
+cd tf-random
 ```
 
 ### Run
@@ -38,14 +38,12 @@ $ terraform init
 _sample_
 
 ```
-terraform init
-
 Initializing the backend...
 
 Initializing provider plugins...
-- Finding latest version of hashicorp/null...
-- Installing hashicorp/null v3.1.0...
-- Installed hashicorp/null v3.1.0 (signed by HashiCorp)
+- Finding latest version of hashicorp/random...
+- Installing hashicorp/random v3.1.0...
+- Installed hashicorp/random v3.1.0 (signed by HashiCorp)
 
 Terraform has created a lock file .terraform.lock.hcl to record the provider
 selections it made above. Include this file in your version control repository
@@ -80,32 +78,29 @@ symbols:
 
 Terraform will perform the following actions:
 
-  # null_resource.null[0] will be created
-  + resource "null_resource" "null" {
-      + id = (known after apply)
+  # random_id.id will be created
+  + resource "random_id" "id" {
+      + b64_std     = (known after apply)
+      + b64_url     = (known after apply)
+      + byte_length = 8
+      + dec         = (known after apply)
+      + hex         = (known after apply)
+      + id          = (known after apply)
     }
 
-  # null_resource.null[1] will be created
-  + resource "null_resource" "null" {
-      + id = (known after apply)
-    }
+Plan: 1 to add, 0 to change, 0 to destroy.
 
-  # null_resource.null[2] will be created
-  + resource "null_resource" "null" {
-      + id = (known after apply)
+Changes to Outputs:
+  + id = {
+      + b64_std     = (known after apply)
+      + b64_url     = (known after apply)
+      + byte_length = 8
+      + dec         = (known after apply)
+      + hex         = (known after apply)
+      + id          = (known after apply)
+      + keepers     = null
+      + prefix      = null
     }
-
-  # null_resource.null[3] will be created
-  + resource "null_resource" "null" {
-      + id = (known after apply)
-    }
-
-  # null_resource.null[4] will be created
-  + resource "null_resource" "null" {
-      + id = (known after apply)
-    }
-
-Plan: 5 to add, 0 to change, 0 to destroy.
 
 Do you want to perform these actions?
   Terraform will perform the actions described above.
@@ -113,29 +108,21 @@ Do you want to perform these actions?
 
   Enter a value: yes
 
-null_resource.null[0]: Creating...
-null_resource.null[4]: Creating...
-null_resource.null[2]: Creating...
-null_resource.null[3]: Creating...
-null_resource.null[1]: Creating...
-null_resource.null[0]: Provisioning with 'local-exec'...
-null_resource.null[2]: Provisioning with 'local-exec'...
-null_resource.null[3]: Provisioning with 'local-exec'...
-null_resource.null[0] (local-exec): Executing: ["/bin/sh" "-c" "echo This is null_resource number: 0"]
-null_resource.null[2] (local-exec): Executing: ["/bin/sh" "-c" "echo This is null_resource number: 2"]
-null_resource.null[3] (local-exec): Executing: ["/bin/sh" "-c" "echo This is null_resource number: 3"]
-null_resource.null[1]: Provisioning with 'local-exec'...
-null_resource.null[1] (local-exec): Executing: ["/bin/sh" "-c" "echo This is null_resource number: 1"]
-null_resource.null[4]: Provisioning with 'local-exec'...
-null_resource.null[4] (local-exec): Executing: ["/bin/sh" "-c" "echo This is null_resource number: 4"]
-null_resource.null[0] (local-exec): This is null_resource number: 0
-null_resource.null[0]: Creation complete after 0s [id=2971497641982540838]
-null_resource.null[3] (local-exec): This is null_resource number: 3
-null_resource.null[1] (local-exec): This is null_resource number: 1
-null_resource.null[4] (local-exec): This is null_resource number: 4
-null_resource.null[2] (local-exec): This is null_resource number: 2
-null_resource.null[3]: Creation complete after 1s [id=7848515897122377505]
-null_resource.null[1]: Creation complete after 1s [id=4194411336333174841]
-null_resource.null[4]: Creation complete after 1s [id=5482766409619898131]
-null_resource.null[2]: Creation complete after 1s [id=171959502576212568]
+random_id.id: Creating...
+random_id.id: Creation complete after 0s [id=zP9YtPQtTd0]
+
+Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+id = {
+  "b64_std" = "zP9YtPQtTd0="
+  "b64_url" = "zP9YtPQtTd0"
+  "byte_length" = 8
+  "dec" = "14771622837012483549"
+  "hex" = "ccff58b4f42d4ddd"
+  "id" = "zP9YtPQtTd0"
+  "keepers" = tomap(null) /* of string */
+  "prefix" = tostring(null)
+}
 ```
